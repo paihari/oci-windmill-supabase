@@ -1,0 +1,34 @@
+[
+    {
+      "action": "create_zip",
+      "file_name": "oci-windmill-supabase.zip",
+      "files": [
+        {
+          "src": "container_instances",
+          "recursive": true,
+          "dst": "container_instances"
+        },
+        {
+          "src": "network",
+          "recursive": true,
+          "dst": "network"
+        },                
+        {
+          "src_pattern": "*.tf",
+          "dst_path": ".",
+          "exclude": [
+            "provider.tf",
+            "variables.tf"
+          ]
+        },
+        {
+          "src": "schema.yaml",
+          "dst": "schema.yaml"
+        }       
+      ]
+    },
+    {
+      "action": "upload_file",
+      "file_name": "oci-windmill-supabase.zip"
+    }
+  ]
